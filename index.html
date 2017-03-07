@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script src="./dist/pagination.min.js"></script>
+    <style>
+        a{
+            padding:5px;
+        }
+        div{
+            margin-bottom:20px;
+        }
+    </style>
+</head>
+<body>
+<div id="main">2222</div>
+<div id="demo"></div>
+<script>
+    window.onload = function(){
+        let page = new MyPagination({
+            el:'#demo',
+            maxPage:20,
+            num_valibale_page:6,
+            paginationStyle:'detail'
+        });
+        page.initPagination((data,err)=>{
+            document.getElementById('main').innerHTML = data;
+        })
+    }
+</script>
+</body>
+</html>
