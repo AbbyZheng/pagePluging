@@ -26,12 +26,12 @@ export default MyPagination = class Pagination {
         for( var i=0;i<aAi.length;i++){
             addEvent(aAi[i],'click',this.handleClick)
         }
-        console.log(this.options.clientPage)
         typeof this.cb === 'function' ? this.cb(this.options.clientPage,null) : ''
     }
     handleClick(e){
         let oParent = getElem(this.options.el);
         let oEvent = event || e;
+        oEvent.stopPropagation();
         let nowNum = oEvent.target.getAttribute('id').substring(1),
             clientPage
         if(nowNum == 'up' || nowNum == 'down'){
