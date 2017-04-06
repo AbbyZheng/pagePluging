@@ -29,7 +29,7 @@ export const removeEvent = (elem, type, handler)=>{
 export const createElemA = (parentEl,page,title)=>{
     if(parentEl && page && title){
         var oElemA = createElem('a');
-        oElemA.href = "#" + page;
+        oElemA.id = "#" + page;
         oElemA.innerHTML = title;
         parentEl.appendChild(oElemA);
     }else{

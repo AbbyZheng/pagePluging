@@ -32,7 +32,7 @@ export default MyPagination = class Pagination {
     handleClick(e){
         let oParent = getElem(this.options.el);
         let oEvent = event || e;
-        let nowNum = oEvent.target.getAttribute('href').substring(1),
+        let nowNum = oEvent.target.getAttribute('id').substring(1),
             clientPage
         if(nowNum == 'up' || nowNum == 'down'){
             clientPage = nowNum
