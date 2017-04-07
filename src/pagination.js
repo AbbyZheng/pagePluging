@@ -16,6 +16,11 @@ export default MyPagination = class Pagination {
         this.cb = null;
     }
     initPagination(cb){
+        let oParent = getElem(this.options.el);
+        this.options.clientPage = 1;
+        if(oParent){
+          oParent.innerHTML = '';
+        }
         createView(this.options)
         this.cb = cb
         this.clickEvent()
